@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Heading from './Componets/Header';
+import TitleCard from './Componets/Title';
+import CartLine from './Componets/Cart';
+import CartFoot from './Componets/Footer';
+import { cartData } from './Data/data';
+import { useState } from 'react';
 
 function App() {
+  // const[cartValue,setCartValue] = useState(cartData);
+  const[cartCount, setCartCount] = useState(0)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Heading
+      cartCount={cartCount}
+       />
+      <TitleCard/>
+        {cartData.map((prod,idx) => (
+          <CartLine 
+          productSale ={prod.productSale}
+          productUrl ={prod.productUrl}
+          productName ={prod.productName}
+          productRating ={prod.productRating}
+          productFirstPrice ={prod.productFirstPrice}
+          productFinalPrice ={prod.productFinalPrice}
+          cartCount={cartCount}
+          setCartCount={setCartCount}
+          />
+        ))}
+      <CartFoot/>
     </div>
   );
 }
