@@ -7,7 +7,6 @@ import { cartData } from './Data/data';
 import { useState } from 'react';
 
 function App() {
-  // const[cartValue,setCartValue] = useState(cartData);
   const[cartCount, setCartCount] = useState(0)
 
   return (
@@ -16,8 +15,10 @@ function App() {
       cartCount={cartCount}
        />
       <TitleCard/>
+      <div class = "container px-4 px-lg-5 mt-5 d-flex justify-content-center flex-column" >
+        <div class ="row gx-4 gx-md-5 row-cols-4 row-cols-md-3 row-cols-xl-4 justify-content-center">
         {cartData.map((prod,idx) => (
-          <CartLine 
+          <CartLine
           productSale ={prod.productSale}
           productUrl ={prod.productUrl}
           productName ={prod.productName}
@@ -28,6 +29,8 @@ function App() {
           setCartCount={setCartCount}
           />
         ))}
+          </div>
+    </div>
       <CartFoot/>
     </div>
   );

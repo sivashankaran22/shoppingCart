@@ -16,17 +16,9 @@ import React,{useState} from 'react';
         setShow(!show)
         setCartCount(cartCount-1)
     }
-// d-flex justify-content-center
-// container px-4 px-lg-5 mt-5
-// row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4
-// 
-// 
+
+ 
     return(
-       
-        <div className= "">
-        <div class = "container px-4 px-lg-5 mt-5 d-flex justify-content-center flex-column" >
-        <div class ="row gx-4 gx-md-5 row-cols-4 row-cols-md-3 row-cols-xl-4 justify-content-center">
-    
          <div class="col mb-5" >
             <div class="card h-100">
                 <button class=" badge bg-dark text-white position-absolute salebad">{productSale}</button>
@@ -53,9 +45,7 @@ import React,{useState} from 'react';
                 </div>
             </div>
          </div>
-         </div> 
-    </div>  
-    </div> 
+   
     )
  }           
 
